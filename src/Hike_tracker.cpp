@@ -250,6 +250,14 @@ void loop() {
 		}
 	}
 
+	int Width (const char* line){
+		if(!line) return 0;
+		uint16_t w1, h1;
+		int16_t x1, y1;
+		display.getTextBounds(line, 0, 0, &x1, &y1, &w1, &h1);
+		return (int)w1;
+	}
+
 	void Bmp180(){
 		display.clearDisplay();
 		display.setTextSize(1);
